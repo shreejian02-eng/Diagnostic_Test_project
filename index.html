@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 5 LevelUp Diagnostic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                900: '#0c4a6e',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        /* Default base */
+      }
+      .animate-pop {
+        animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      @keyframes pop {
+        0% { transform: scale(0.95); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      
+      /* Progress Bar Animations */
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      .animate-shimmer {
+        background-size: 200% 100%;
+        animation: shimmer 3s linear infinite;
+      }
+
+      /* Progress Bar Pop */
+      @keyframes progress-pop {
+        0% { transform: scaleY(1); filter: brightness(1); }
+        50% { transform: scaleY(2.5); filter: brightness(1.2); }
+        100% { transform: scaleY(1); filter: brightness(1); }
+      }
+      .animate-progress-pop {
+        animation: progress-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      /* Smart Engine Animations */
+      @keyframes shake { 
+        0% { transform: translateX(0); } 
+        25% { transform: translateX(-5px); } 
+        75% { transform: translateX(5px); } 
+        100% { transform: translateX(0); } 
+      }
+      .animate-shake {
+        animation: shake 0.4s ease-in-out;
+      }
+
+      @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100px) rotate(360deg); opacity: 0; }
+      }
+      .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        animation: fall 1s ease-out forwards;
+        pointer-events: none;
+        z-index: 50;
+      }
+
+      @keyframes pulseGreen { 
+        0% { transform: scale(1); } 
+        50% { transform: scale(1.1); filter: brightness(1.2); } 
+        100% { transform: scale(1); } 
+      }
+      .animate-success {
+        animation: pulseGreen 0.5s ease-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+    <div id="root"></div>
+  </body>
+</html>
